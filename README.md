@@ -19,7 +19,7 @@
 - [x] _**A Business can see a list of jobs they created**_
 - [x] _**A Business can Login**_
 
-###Select Options:
+### Select Options:
 
 - Job Types: Full-time, Temporary, Contract, Permanent, Internship, Volunteer
 Work Conditions: Remote, Part Remote, On-Premise,
