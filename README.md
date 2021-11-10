@@ -27,7 +27,7 @@ Work Conditions: Remote, Part Remote, On-Premise,
 
 
 
-###Expected Sample Business Credentials:
+### Expected Sample Business Credentials:
 
 - Email: business@example.com
 - Password: password
