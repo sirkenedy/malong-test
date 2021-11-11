@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Job\ApplicationJobRequest;
 use App\Services\Application\IApplicationService;
 use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
 
 class ApplicationController extends BaseController
 {
@@ -22,7 +23,7 @@ class ApplicationController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(ApplicationJobRequest $request)
+    public function __invoke(ApplicationJobRequest $request) : JsonResponse
     {
         if ($this->application->submitJobApplication($request->validated())) {
             return $this->handleResponse("", "Job application was successfully", Response::HTTP_OK);

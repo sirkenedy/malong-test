@@ -18,7 +18,7 @@ class CreateApplicationsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('resume');
-            $table->foreignId('job_id');
+            $table->foreignId('job_id')->constrained()->nullable()->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });
     }
