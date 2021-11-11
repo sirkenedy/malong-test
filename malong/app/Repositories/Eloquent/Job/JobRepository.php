@@ -23,4 +23,10 @@ class JobRepository extends ReadWriteModifyRepository  implements IJobRepository
     {         
         $this->model = $model;
     }
+
+    public function searchJobs($data)
+    {
+        return $this->model->filterSearchResult($data)->with('user')->get();
+    }
+
 }

@@ -38,4 +38,12 @@ class JobService implements IJobService
     {
         return $this->jobRepository->delete($id);
     }
+
+    public function filterJobsByQuery($data)
+    {
+        if (array_key_exists('job_title', $data) && $data['job_title']) {
+            return $this->jobRepository->searchJobs($data);
+        }
+        return false;
+    }
 }

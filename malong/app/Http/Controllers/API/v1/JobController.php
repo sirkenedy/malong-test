@@ -19,7 +19,7 @@ class JobController extends BaseController
 
     public function __construct(IJobService $job)
     {
-        $this->middleware('auth:sanctum', ['except' => ['index','show']]);
+        $this->middleware('auth:sanctum', ['except' => ['index','show','searchJob','applyJob']]);
         $this->job = $job;
     }
     /**
@@ -79,5 +79,13 @@ class JobController extends BaseController
         $this->job->deleteJobById($job);
         return $this->handleResponse([], "Job deleted successfully", Response::HTTP_OK);
         
+    }
+
+    public function searchJob(Request $request)
+    {
+        if ($data = $this->job->filterJobsByQuery($request->all())) {
+            return $this->handleResponse(new JobCollection($data), "", Response::HTTP_OK);
+        }
+        return $this->handleError("Enter Job title / keyword most likely to appear in job description", [], Response::HTTP_BAD_REQUEST);
     }
 }
