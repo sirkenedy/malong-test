@@ -26,7 +26,7 @@ class RegistrationValidationRequest extends FormRequest
         return [
             "email" => "bail|required|string|email|unique:users",
             "name" => "required|string",
-            "username" => "required|string",
+            "business_name" => "required|string",
             "password" => "required|string",
         ];
     }

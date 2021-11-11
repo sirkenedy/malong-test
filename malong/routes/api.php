@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\controllers\API\v1\Auth\LoginController;
 use App\Http\controllers\API\v1\Auth\RegisterController;
+use App\Http\controllers\API\v1\JobController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/login', LoginController::class);
 Route::post('/register', RegisterController::class);
+
+Route::apiResource('jobs', JobController::class);
