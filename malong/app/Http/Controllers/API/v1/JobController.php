@@ -81,7 +81,7 @@ class JobController extends BaseController
         
     }
 
-    public function searchJob(Request $request)
+    public function searchJob(Request $request) : JsonResponse
     {
         if ($data = $this->job->filterJobsByQuery($request->all())) {
             return $this->handleResponse(new JobCollection($data), "", Response::HTTP_OK);
