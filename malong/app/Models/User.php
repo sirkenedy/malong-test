@@ -48,4 +48,14 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = Hash::make($value);
     }
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
+
+    public function ScopeCreatedJobOpening($query)
+    {
+        $query->where('id', auth('sanctum')->user()->id);
+    } 
 }

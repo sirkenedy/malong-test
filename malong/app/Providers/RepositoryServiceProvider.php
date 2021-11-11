@@ -12,6 +12,9 @@ use App\Repositories\Eloquent\ReadOnlyRespository;
 use App\Repositories\Eloquent\Job\JobRepository;
 use App\Repositories\Eloquent\Job\JobRepositoryInterface;
 
+use App\Repositories\Eloquent\Application\ApplicationRepository;
+use App\Repositories\Eloquent\Application\ApplicationRepositoryInterface;
+
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -26,6 +29,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(IReadOnlyRepository::class, ReadWriteModifyRepository::class);
         $this->app->bind(IWriteModifyRepository::class, ReadWriteModifyRepository::class);
         $this->app->bind(JobRepositoryInterface::class, JobRepository::class);
+        $this->app->bind(ApplicationRepositoryInterface::class, ApplicationRepository::class);
     }
 
     /**
