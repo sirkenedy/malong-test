@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API\v1\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\API\BaseController;
 use App\Http\Requests\Auth\LoginValidationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class LoginController extends BaseController
 {
     /**
      * Handle the incoming request.
