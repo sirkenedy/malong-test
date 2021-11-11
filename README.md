@@ -2,7 +2,7 @@
 
 ### ASSESSMENT
 
-[]- Create an API for a Micro Job board. We will score this Assessment on the following:
+#### Create an API for a Micro Job board. We will score this Assessment on the following:
 
 - *Cleanliness of the codebase*
 - *Simplicity of design*
